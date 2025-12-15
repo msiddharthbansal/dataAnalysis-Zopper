@@ -1,7 +1,7 @@
 # Data Science Internship Assessment: Zopper
 
 ## Overview
-This repository contains the solution for the hiring assessment. The goal was to analyze the provided dataset, visualize key relationships, and build a predictive model to estimate [Insert Target Variable, e.g., Housing Prices / Depth / Customer Churn].
+This repository contains the solution for the hiring assessment. The goal was to analyze the provided dataset, visualize key relationships, and build a predictive model to estimate store performance trends to predict January "Attach Rates" across different regions. The solution handles high-volatility data by distinguishing between **consistent performers** and **unstable stores**, applying smoothing techniques where necessary.
 
 ## Repository Structure
 ```text
