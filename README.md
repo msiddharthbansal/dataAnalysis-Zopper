@@ -20,33 +20,27 @@ This repository contains the solution for the hiring assessment. The goal was to
 
 ## Approach & Methodology
 
-I followed a sequential data science pipeline to ensure robustness and accuracy:
+Instead of a simple average, I implemented a robust tiered prediction logic:
 
-### 1\. Data Loading & Inspection
+### 1\. Exploratory Data Analysis (EDA)
 
-  - Loaded the dataset using **Pandas**.
-  - Checked for data integrity (null values, data types, and duplicates).
-  - Performed basic statistical summary analysis.
+  - **Trend Analysis:** Visualized monthly growth trends by Branch.
+  - **Volatility Check:** Plotted Mean vs Standard Deviation to identify unstable stores.
+  - **Correlation Decay:** Confirmed that recent months (Dec/Nov) have a much stronger correlation with the target than older months (Aug/Sep).
 
-### 2\. Exploratory Data Analysis (EDA)
+### 2\. Feature Engineering & Logic
 
-  - **Visualization:** Utilized **Matplotlib** and **Seaborn** to understand data distributions.
-  - **Correlation Analysis:** Generated a correlation matrix to identify features strongly related to the target variable.
-  - *Key Observation:* [Mention one interesting thing you found, e.g., "Feature X had a high positive correlation with the target."]
+  - **Weighted Prediction:** For stable stores, I used a weighted average: Prediction = (Dec x 0.5) + (Nov x 0.3) + (Oct x 0.2). This prioritizes recent performance.
+  - **Outlier Smoothing:** For "Inconsistent" stores (high volatility), I applied a smoothing function:
+      1) Identified stores where standard deviation > 0.20.
+      2) Capped outliers that deviated > 1.5x from the median before calculating predictions .
 
-### 3\. Data Preprocessing
+### 3\. Key Results
 
-  - **Handling Missing Values:** [Explain how, e.g., "Filled with mean" or "Dropped rows"].
-  - **Feature Selection:** Selected relevant features based on correlation analysis.
-  - **Train-Test Split:** Split the data (e.g., 80/20) to evaluate model performance on unseen data.
+  - **Star Performers:** identified stores like "Hauz Khas" as statistical outliers (positive) to be studied.
+  - **Market Correction:** The model corrected aggressive spikes in December data to provide a realistic January forecast.
 
-### 4\. Model Development
-
-  - Implemented **[Insert Model Name, e.g., Linear Regression / Random Forest]**.
-  - Trained the model on the training set.
-  - **Why this model?** [Briefly explain, e.g., "Chosen for its interpretability and effectiveness on linear datasets."]
-
-## 📊 Visualizations
+## Visualizations
 
 ### Correlation Heatmap
 
