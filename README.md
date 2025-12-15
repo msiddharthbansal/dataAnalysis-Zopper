@@ -44,11 +44,11 @@ Instead of a simple average, I implemented a robust tiered prediction logic:
 
 ### Correlation Heatmap
 
-<img width="785" height="682" alt="correlation_btw_months_heatmap" src="https://github.com/msiddharthbansal/dataAnalysis-Zopper/plots" />
+<img width="785" height="682" alt="correlation_btw_months_heatmap" src="https://github.com/msiddharthbansal/dataAnalysis-Zopper/blob/main/plots/correlation_btw_months_heatmap.png" />
 
 ### Model Performance (Projected Change: December vs January)
 
-<img width="1012" height="547" alt="market_prediction_after_smoothing" src="https://github.com/msiddharthbansal/dataAnalysis-Zopper/plots" />
+<img width="1012" height="547" alt="market_prediction_after_smoothing" src="https://github.com/msiddharthbansal/dataAnalysis-Zopper/blob/main/plots/market_prediction_after_smoothing.png" />
 
 
 ## How to Run
